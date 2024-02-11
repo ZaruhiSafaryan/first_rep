@@ -1,0 +1,227 @@
+        /*axios*/
+  // useEffect(() => {
+  //     // axios.get('https://jsonplaceholder.typicode.com/posts')
+  //     // axios('https://jsonplaceholder.typicode.com/posts')
+  //     // axios({
+  //     //   baseURL: 'https://jsonplaceholder.typicode.com/',
+  //     //   url: 'posts'
+  //     // })
+  //     // axios({
+  //     //   baseURL: 'https://jsonplaceholder.typicode.com/',
+  //     //   url: 'posts',
+  //     //   params: {
+  //     //     _limit: 10,
+  //     //     _start: 56
+  //     //   }
+  //     // })
+  //     // axios.all([
+  //     //   axios.get('https://jsonplaceholder.typicode.com/posts'),
+  //     //   axios.get('https://jsonplaceholder.typicode.com/users'),
+  //     //   axios.get('https://jsonplaceholder.typicode.com/todos'),
+  //     // ])
+  //     //   .then(([posts, users, todos]) => {
+  //     //     console.log('posts:', posts.data)
+  //     //     console.log('users:', users.data)
+  //     //     console.log('todos:', todos.data)
+  //     //   })
+  //     axios('posts')
+  //       .then(res => setPosts(res.data))
+  //       .catch(err => console.log(err))
+  //   }, [])
+
+
+    /* filter-photos-input*/
+  // export default function App() {
+  //     const [photos, setPhotos] = useState([]);
+  //     const [searchValue, setSearchValue] = useState('');
+  //     const [isPending, startTransition] = useTransition();
+  //     const [id, setId] = useState(null)
+    
+  //     useEffect(() => {
+  //       axios(DB_URL)
+  //         .then(res => setPhotos(res.data))
+  //     }, [])
+
+  //     const filteredData = (searchValue, photos) => {
+  //         if (!searchValue) return photos;
+  //         const result = photos.filter(elem => elem.title.includes(searchValue))
+  //         return result
+  //       }
+    
+    
+  //     // 50ms 100ms
+  //     const handleChange = (e) => {
+  //       if (id) {
+  //         clearTimeout(id)
+  //       }
+    
+  //       const sto = setTimeout(() => {
+  //         startTransition(() => setSearchValue(e.target.value.toLowerCase()))
+  //       }, 200)
+  //       setId(sto)
+  //     }
+    
+  //     return (
+  //       <div className='App'>
+  //         <form>
+  //           <h3>you search : {searchValue} </h3>
+  //           <input
+  //             type="search"
+  //             placeholder='search'
+  //             onChange={handleChange}
+  //           />
+  //         </form>
+  //         <div className="Photos">
+  //           {
+  //             isPending
+  //               ? <h1>Loading...</h1>
+  //               : filteredData(searchValue, photos).map(elem => <h2 key={elem.id}>{elem.title}</h2>)
+  //           }
+  //         </div>
+  //       </div>
+  //     )
+  //   }
+    
+
+  /* form  and FORMIK*/
+  // <form onSubmit={handleSubmit}>
+  //   <label htmlFor="username">username</label>
+  //   <input type="text" placeholder='enter Name' required id='username' />
+  //   <label htmlFor="password">password</label>
+  //   <input type="password" placeholder='enter password' required id='password' />
+  //   <input type="submit" value='add' />
+  // </form>
+
+{/* <div>
+  <select name="cars" id="cars" onChange={handleChange} defaultValue="">
+    <option value="" disabled>select cars...</option>
+    {
+      brands.map(brand => {
+        return <option value={brand} key={brand}>{brand}</option>
+      })
+    }
+  </select>
+  <p>mnac {messageSymbols.length}/250 symbols</p>
+  <textarea
+    name="message"
+    id="message"
+    cols="30"
+    rows="10"
+    maxLength={250}
+    minLength={20}
+    onChange={handleTextChange}
+  >
+    Lorem ipsum dolor sit.
+  </textarea>
+  <h1>your car is: {car}</h1>
+</div> */}
+
+{/* <input
+          type="email"
+          placeholder='Enter Email...'
+          onBlur={handleEmailChange}
+        /> */}
+
+// useref ////
+// const inputRef = useRef(null); // {current: null}
+// const handleChange = () => {
+//   setChecked(inputRef.current?.checked)
+// }
+// <p>
+//   <form onSubmit={handleChange}>
+//     <input
+//       type="checkbox"
+//       id='policy'
+//       ref={inputRef}
+//       onChange={handleChange}
+//     />
+//     <label htmlFor="policy">I agree</label>
+//   </form>
+// </p>
+
+
+
+/////formik/////
+{/* <Formik
+onSubmit={handleSubmit}
+initialValues={initialValues}
+validationSchema={validationSchema}
+>
+
+{
+  (formik) => {
+    return (
+      <Form>
+        <ErrorMessage>
+          {(errors) => {
+
+            return (
+              <div className='errors'>
+                {Object.keys(errors).map(elem => {
+                  return <p key={elem} className='errors'>{errors[elem]}</p>
+                })}
+              </div>
+            )
+          }}
+        </ErrorMessage>
+        <Field type="text" name="username" />
+        <Field type="email" name="email" />
+        <Field type="password" name="password" />
+        <Field as='select' name="language" dafaultvalue='' required>
+          <option value="" disabled>select language</option>
+          <option value="html">html</option>
+          <option value="css">css</option>
+          <option value="javascript">javascript</option>
+          <option value="react">react</option>
+        </Field>
+        <input type="submit" />
+      </Form>
+    )
+  }
+}
+</Formik> */}
+
+
+// localStorage , randomcolor
+
+// const handleChange = () => {
+//   // const randomColor = "#" + Math.random().toString(16).slice(2, 8)
+//   // localStorage.setItem('color', randomColor)
+//   // setColor(localStorage.getItem("color"))
+
+//   const arr = ['html', 'css', 'Java Script', 'React.js', 'Node.js', 'Python'];
+//   localStorage.setItem('arr', JSON.stringify(arr))
+//   setColor(JSON.parse(localStorage.getItem("arr")) ?? [])
+// }
+
+// useEffect(() => {
+//   document.body.style.backgroundColor = color
+// }, [color])
+
+
+// inchpes stanal tvjalner ev tvjalneric vercnel miayn petqakan dashter@
+// useEffect(() => {
+//   axios.get('https://jsonplaceholder.typicode.com/posts', {
+//     params: {
+//       _limit: 15,
+//       _start: 34
+//     }
+//   }).then(res => {
+//     const posts = res.data.map(({ id, title }) => ({ id, title }))
+//     setLanguages(posts)
+//   })
+// }, [])
+
+// sortavorel ajman kam nvazman karqov
+// setLanguages(prevPosts => {
+//   return (
+//     sortedOption
+//       ? prevPosts.toSorted((a, b) => a.title > b.title ? 1 : -1)
+//       : prevPosts.toSorted((a, b) => a.title > b.title ? -1 : 1)
+//   )
+// })
+// setSortedOption(!sortedOption)
+
+
+// hook useParams
+// const { postid } = useParams();
